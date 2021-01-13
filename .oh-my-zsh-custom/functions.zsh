@@ -1,4 +1,12 @@
-# Functions
+# #!/bin/zsh
+which fzf &> /dev/null
+if [ $? -eq 0 ]; then
+  echo "git status exited successfully"
+else
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+	~/.fzf/install --no-fish --key-bindings --completion --no-update-rc
+fi
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 rf() {

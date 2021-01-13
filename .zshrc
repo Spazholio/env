@@ -104,9 +104,11 @@ export LS_OPTIONS='--color=auto'
 # For a full list of active aliases, run `alias`.
 #
 
+# This is so I can keep all my dotfiles in $HOME without silly symlink
+# shenanigans
 alias dotfiles="$(which git) --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
-# Set up dircolors, currently based on the solarized theme
+# Set up OS-specific settings
 case `uname` in
 	Darwin)
 		eval $(gdircolors -b ~/.dircolors)
