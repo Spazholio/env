@@ -14,7 +14,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+# Because installing a submodule into another submodule just wasn't working
 ZSH_CUSTOM=".oh-my-zsh-custom"
+
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
 
@@ -106,12 +108,13 @@ alias dotfiles="$(which git) --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
 # Set up dircolors, currently based on the solarized theme
 case `uname` in
-    Darwin)
+	Darwin)
 		eval $(gdircolors -b ~/.dircolors)
-        ;;
-    Linux)
+		source /opt/homebrew/opt/gitstatus/gitstatus.prompt.zsh
+		;;
+	Linux)
 		eval $(dircolors -b ~/.dircolors)
-        ;;
+		;;
 esac
 
 # Activate TheFuck
@@ -124,7 +127,6 @@ zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f
 HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 GITSTATUS_LOG_LEVEL=DEBUG
 
-source /opt/homebrew/opt/gitstatus/gitstatus.prompt.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
