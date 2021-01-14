@@ -132,4 +132,8 @@ GITSTATUS_LOG_LEVEL=DEBUG
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Turns on extended-sort mode by default.  Prefix search terms with ' for exact
+# match
+export FZF_DEFAULT_OPTS='--extended'
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

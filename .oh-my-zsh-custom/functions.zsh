@@ -4,11 +4,11 @@
 which fzf &> /dev/null
 if [ $? -eq 0 ]; then
 else
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 	~/.fzf/install --no-fish --key-bindings --completion --no-update-rc
 fi
 
-
+# fzf and ripgrep-all is damned-near Turing complete
 rf() {
     RG_PREFIX="rga --files-with-matches"
     local file
@@ -21,4 +21,24 @@ rf() {
     )" &&
     echo "opening $file" &&
     open "$file"
+}
+
+# fzf-enhanced history command
+fh() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+}
+
+# fzf-enhanced kill - kill processes, list only the ones you can kill.
+fkill() {
+    local pid
+    if [ "$UID" != "0" ]; then
+        pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
+    else
+        pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+    fi
+
+    if [ "x$pid" != "x" ]
+    then
+        echo $pid | xargs kill -${1:-9}
+    fi
 }
