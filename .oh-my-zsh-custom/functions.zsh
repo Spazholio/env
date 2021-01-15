@@ -42,3 +42,8 @@ fkill() {
         echo $pid | xargs kill -${1:-9}
     fi
 }
+
+# Quick and dirty way to see where the hell an alias might be defined.  Noisy.
+whichwhere() {
+	PS4='+%x:%I >>> ' zsh -i -x -c '' |& grep -v zcompdump |& grep -i $1
+}
