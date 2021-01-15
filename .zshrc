@@ -25,7 +25,7 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Because installing a submodule into another submodule just wasn't working
-ZSH_CUSTOM=".oh-my-zsh-custom"
+ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
