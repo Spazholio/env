@@ -5,6 +5,7 @@ echo ".cfg" >> .gitignore
 git clone --bare https://github.com/Spazholio/env.git $HOME/.cfg
 alias dotfiles="$(which git) --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 dotfiles config --local status.showUntrackedFiles no
+dotfiles config pull.rebase false
 dotfiles checkout
 dotfiles submodule update --init --recursive```
 ```
