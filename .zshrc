@@ -76,7 +76,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(z git sudo zsh-completions zsh-autosuggestions zsh-syntax-highlighting colored-man-pages cp jsontools nmap rsync ssh-agent zsh-interactive-cd zsh_reload autoupdate extract)
+plugins=(z git sudo zsh-completions zsh-autosuggestions colored-man-pages cp jsontools nmap rsync ssh-agent zsh-interactive-cd zsh_reload autoupdate extract zsh-syntax-highlighting)
 
 # oh_my_zsh autoupdate plugin - Uncomment the following line to change how often to auto-update (in days).
 export UPDATE_ZSH_DAYS=1
