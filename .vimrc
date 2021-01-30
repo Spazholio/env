@@ -1,5 +1,6 @@
 " Plugin manager (vim-plug)
 call plug#begin()
+Plug 'chr4/nginx.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sjl/badwolf'
