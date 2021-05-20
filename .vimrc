@@ -104,3 +104,5 @@ let g:airline#extensions#whitespace#enabled = 1
 " Airline options
 let g:airline_powerline_fonts = 1
 let g:airline_theme='badwolf'
+
+set omnifunc=syntaxcomplete#Complete
