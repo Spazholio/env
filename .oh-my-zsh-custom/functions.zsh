@@ -47,3 +47,13 @@ fkill() {
 whichwhere() {
 	PS4='+%x:%I >>> ' zsh -i -x -c '' |& grep -v zcompdump |& grep -i $1
 }
+
+# Only create this alias if I'm on an Arch system
+if [ -f /etc/os-release ]; then
+    # freedesktop.org and systemd
+    . /etc/os-release
+	OS=$NAME
+	if [ $OS = "Arch Linux" ]; then
+		alias yay-installed="yay -Qq | fzf --multi --preview 'yay -Qi {1}'"
+	fi	
+fi
