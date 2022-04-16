@@ -12,6 +12,7 @@ Plug 'morhetz/gruvbox'
 Plug 'powerline/powerline'
 Plug 'tpope/vim-fugitive'
 Plug 'nanotech/jellybeans.vim'
+Plug 'ekalinin/Dockerfile.vim'
 call plug#end()
 
 
