@@ -47,3 +47,30 @@ fkill() {
 whichwhere() {
 	PS4='+%x:%I >>> ' zsh -i -x -c '' |& grep -v zcompdump |& grep -i $1
 }
+
+# #Docker functions
+# Docker attach
+function datt() {
+  local cid
+  cid=$(docker ps -a | sed 1d | fzf -1 -q "$1" | awk '{print $1}')
+
+  [ -n "$cid" ] && echo "Attaching to $cid" && docker attach "$cid"
+}
+
+# Select a running docker container to stop
+function dres() {
+  local cid
+  cid=$(docker ps | sed 1d | fzf -q "$1" | awk '{print $1}')
+
+  [ -n "$cid" ] && docker restart "$cid"
+}
+
+# Only create this alias if I'm on an Arch system
+if [ -f /etc/os-release ]; then
+    # freedesktop.org and systemd
+    . /etc/os-release
+	OS=$NAME
+	if [ $OS = "Arch Linux" ]; then
+		alias yay-installed="yay -Qq | fzf --multi --preview 'yay -Qi {1}'"
+	fi	
+fi

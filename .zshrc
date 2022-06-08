@@ -29,7 +29,7 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
 
 # Uncomment the following line to use case-sensitive completion.
-CASE_SENSITIVE="true"
+# CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -45,7 +45,7 @@ CASE_SENSITIVE="true"
 export UPDATE_ZSH_DAYS=1
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
+DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -77,7 +77,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(z git sudo zsh-autosuggestions colored-man-pages cp jsontools nmap rsync ssh-agent zsh-interactive-cd zsh_reload autoupdate extract zsh-syntax-highlighting)
+plugins=(z git sudo zsh-completions zsh-autosuggestions colored-man-pages cp jsontools nmap rsync ssh-agent zsh-interactive-cd autoupdate extract zsh-syntax-highlighting docker)
 
 # oh_my_zsh autoupdate plugin - Uncomment the following line to change how often to auto-update (in days).
 export UPDATE_ZSH_DAYS=1

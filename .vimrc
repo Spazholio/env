@@ -1,5 +1,6 @@
 " Plugin manager (vim-plug)
 call plug#begin()
+Plug 'chr4/nginx.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sjl/badwolf'
@@ -11,6 +12,7 @@ Plug 'morhetz/gruvbox'
 Plug 'powerline/powerline'
 Plug 'tpope/vim-fugitive'
 Plug 'nanotech/jellybeans.vim'
+Plug 'ekalinin/Dockerfile.vim'
 call plug#end()
 
 
@@ -103,3 +105,5 @@ let g:airline#extensions#whitespace#enabled = 1
 " Airline options
 let g:airline_powerline_fonts = 1
 let g:airline_theme='badwolf'
+
+set omnifunc=syntaxcomplete#Complete
