@@ -22,10 +22,11 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # Because installing a submodule into another submodule just wasn't working
-ZSH_CUSTOM=".oh-my-zsh-custom"
+ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -76,7 +77,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(z git sudo zsh-completions zsh-autosuggestions zsh-syntax-highlighting colored-man-pages cp jsontools nmap rsync ssh-agent zsh-interactive-cd zsh_reload autoupdate extract)
+plugins=(z git sudo zsh-autosuggestions colored-man-pages cp jsontools nmap rsync ssh-agent zsh-interactive-cd zsh_reload autoupdate extract zsh-syntax-highlighting)
 
 # oh_my_zsh autoupdate plugin - Uncomment the following line to change how often to auto-update (in days).
 export UPDATE_ZSH_DAYS=1
@@ -147,3 +148,7 @@ GITSTATUS_LOG_LEVEL=DEBUG
 export FZF_DEFAULT_OPTS='--extended'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+#source ~/.oh-my-zsh-custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.iterm2_shell_integration.zsh
+
+function gam() { "/home/marti608/Apps/gam/gam" "$@" ; }
