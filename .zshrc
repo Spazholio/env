@@ -22,7 +22,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # Because installing a submodule into another submodule just wasn't working
 ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
@@ -147,3 +148,7 @@ GITSTATUS_LOG_LEVEL=DEBUG
 export FZF_DEFAULT_OPTS='--extended'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+#source ~/.oh-my-zsh-custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.iterm2_shell_integration.zsh
+
+function gam() { "/home/marti608/Apps/gam/gam" "$@" ; }
